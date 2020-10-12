@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanfor</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sprites -->
+    <svg style="display: none;">
+        <symbol id="youtube" viewBox="0 0 21 21">
+            <g>
+                <path d="M7.02289 4.78074V8.47583C7.02289 8.54387 7.07796 8.59894 7.146 8.59894H7.96671C8.03475 8.59894 8.08982 8.54387 8.08982 8.47583V4.78074L9.84442 0.166851C9.85878 0.129016 9.85369 0.0865032 9.83071 0.0531822C9.80773 0.0199433 9.7699 0 9.72936 0H8.85136C8.80031 0 8.75443 0.0315975 8.73629 0.079363L7.55635 3.18199L6.37642 0.079363C6.35828 0.0315975 6.31248 0 6.26143 0H5.38335C5.34289 0 5.30497 0.0199433 5.28199 0.0531822C5.25901 0.0865032 5.25393 0.129016 5.26829 0.166851L7.02289 4.78074Z"/>
+                <path d="M8.98706 4.69028V7.15513C8.98706 8.05266 9.71725 8.78285 10.6148 8.78285C11.5123 8.78285 12.2426 8.05266 12.2426 7.15513V4.69028C12.2426 3.79275 11.5124 3.06256 10.6148 3.06256C9.71725 3.06256 8.98706 3.79275 8.98706 4.69028ZM11.1757 7.15513C11.1757 7.46437 10.9241 7.71592 10.6148 7.71592C10.3055 7.71592 10.054 7.46437 10.054 7.15513V4.69028C10.054 4.38104 10.3055 4.12949 10.6148 4.12949C10.924 4.12949 11.1757 4.38104 11.1757 4.69028V7.15513Z"/>
+                <path d="M14.3136 8.46902C14.5109 8.46902 14.6993 8.43192 14.8745 8.36733V8.47583C14.8745 8.54387 14.9296 8.59894 14.9976 8.59894H15.8183C15.8864 8.59894 15.9414 8.54387 15.9414 8.47583V6.8413V6.21345V3.47366C15.9414 3.40563 15.8864 3.35056 15.8183 3.35056H14.9976C14.9296 3.35056 14.8745 3.40563 14.8745 3.47366V6.21345V6.8413C14.8745 7.15054 14.623 7.40209 14.3136 7.40209C14.0044 7.40209 13.7528 7.15054 13.7528 6.8413V3.47366C13.7528 3.40563 13.6978 3.35056 13.6297 3.35056H12.809C12.741 3.35056 12.6859 3.40563 12.6859 3.47366V6.8413C12.6858 7.73883 13.4161 8.46902 14.3136 8.46902Z"/>
+                <path d="M12.3374 14.7189C12.0282 14.7189 11.7766 14.9705 11.7766 15.2797V17.3342C11.7766 17.6434 12.0282 17.895 12.3374 17.895C12.6466 17.895 12.8983 17.6434 12.8983 17.3342V15.2797C12.8983 14.9705 12.6466 14.7189 12.3374 14.7189Z"/>
+                <path d="M15.889 14.6779C15.5798 14.6779 15.3282 14.9294 15.3282 15.2387V15.6135H16.4499V15.2387C16.4498 14.9294 16.1983 14.6779 15.889 14.6779Z"/>
+                <path d="M16.245 9.51001H4.75503C2.34977 9.51001 0.392944 11.4668 0.392944 13.872V16.6378C0.392944 19.0431 2.34977 20.9999 4.75503 20.9999H16.245C18.6503 20.9999 20.6071 19.0431 20.6071 16.6378V13.872C20.6071 11.4668 18.6503 9.51001 16.245 9.51001ZM6.2942 18.4353C6.2942 18.5033 6.23913 18.5584 6.17109 18.5584H5.35038C5.28234 18.5584 5.22727 18.5033 5.22727 18.4353V12.6082H4.01672C3.94868 12.6082 3.89361 12.5531 3.89361 12.4851V11.6644C3.89361 11.5963 3.94868 11.5413 4.01672 11.5413H7.50475C7.57279 11.5413 7.62786 11.5963 7.62786 11.6644V12.4851C7.62786 12.5531 7.57279 12.6082 7.50475 12.6082H6.2942V18.4353ZM10.2268 16.4245V17.2644V18.8735C10.2268 18.9416 10.1717 18.9966 10.1037 18.9966H9.28299C9.21495 18.9966 9.15988 18.9416 9.15988 18.8735V18.7904C8.98474 18.855 8.79639 18.8921 8.59901 18.8921C7.70148 18.8921 6.97129 18.2728 6.97129 17.2644V14.5233C6.97129 14.4552 7.02636 14.4001 7.0944 14.4001H7.91511C7.98315 14.4001 8.03822 14.4552 8.03822 14.5233V17.2644C8.03822 17.5736 8.28976 17.8251 8.59901 17.8251C8.90825 17.8251 9.15988 17.5736 9.15988 17.2644V16.4245V14.5232C9.15988 14.4551 9.21495 14.4001 9.28299 14.4001H10.1037C10.1717 14.4001 10.2268 14.4551 10.2268 14.5232V16.4245ZM13.9652 17.3342C13.9652 18.2317 13.235 18.9619 12.3374 18.9619C12.1401 18.9619 11.9518 18.9248 11.7766 18.8602V18.9502C11.7766 19.0182 11.7216 19.0733 11.6535 19.0733H10.8328C10.7648 19.0733 10.7097 19.0182 10.7097 18.9502V17.3342V15.2797V11.8285C10.7097 11.7605 10.7648 11.7054 10.8328 11.7054H11.6535C11.7216 11.7054 11.7766 11.7605 11.7766 11.8285V13.7536C11.9518 13.689 12.1401 13.6519 12.3374 13.6519C13.235 13.6519 13.9652 14.3821 13.9652 15.2796V17.3342ZM17.5167 16.5573C17.5167 16.6253 17.4616 16.6804 17.3936 16.6804H15.3281V17.3342C15.3281 17.6434 15.5797 17.895 15.8889 17.895C16.1982 17.895 16.4498 17.6434 16.4498 17.3342C16.4498 17.2662 16.5049 17.2111 16.5729 17.2111H17.3936C17.4616 17.2111 17.5167 17.2662 17.5167 17.3342C17.5167 18.2317 16.7864 18.9619 15.8889 18.9619C14.9914 18.9619 14.2612 18.2317 14.2612 17.3342V15.2387C14.2612 14.3411 14.9915 13.6109 15.8889 13.6109C16.7864 13.6109 17.5167 14.3411 17.5167 15.2387V16.5573Z"/>
+                </g>
+        </symbol>
+        <symbol id="inst" viewBox="0 0 21 21">
+            <g clip-path="url(#clip0)">
+                <path d="M10.7067 20.9999C10.6371 20.9999 10.5676 20.9999 10.4976 20.9996C8.85152 21.0036 7.33058 20.9618 5.85146 20.8718C4.49538 20.7893 3.25754 20.3206 2.27156 19.5166C1.32019 18.7409 0.670509 17.6919 0.340622 16.3993C0.0535126 15.2739 0.0382919 14.1692 0.0237122 13.1007C0.0131378 12.3341 0.00224304 11.4257 0 10.5019C0.00224304 9.57421 0.0131378 8.66577 0.0237122 7.89913C0.0382919 6.83081 0.0535126 5.72611 0.340622 4.60058C0.670509 3.30795 1.32019 2.259 2.27156 1.48323C3.25754 0.679262 4.49538 0.210627 5.85162 0.128115C7.33074 0.038233 8.85201 -0.00374391 10.5016 0.000261521C12.1482 -0.00326326 13.6686 0.038233 15.1477 0.128115C16.5038 0.210627 17.7417 0.679262 18.7276 1.48323C19.6792 2.259 20.3287 3.30795 20.6586 4.60058C20.9457 5.72595 20.9609 6.83081 20.9755 7.89913C20.9861 8.66577 20.9971 9.57421 20.9992 10.498C20.9971 11.4257 20.9861 12.3341 20.9755 13.1007C20.9694 13.5538 20.5951 13.9159 20.1441 13.9098C19.691 13.9036 19.3289 13.5313 19.335 13.0783C19.3454 12.3162 19.3565 11.4137 19.3586 10.498C19.3565 9.58622 19.3454 8.68372 19.335 7.92156C19.3217 6.94889 19.3079 5.94304 19.0689 5.00625C18.8278 4.06129 18.3641 3.30378 17.6909 2.75472C16.9627 2.16079 16.0735 1.82802 15.0481 1.7657C13.6037 1.6779 12.1169 1.63736 10.5016 1.64073C8.88245 1.63688 7.39547 1.6779 5.95111 1.7657C4.92572 1.82802 4.03667 2.16079 3.30833 2.75456C2.63509 3.30362 2.17142 4.06113 1.9303 5.00625C1.69125 5.94304 1.67747 6.94889 1.66418 7.92156C1.65376 8.68372 1.64287 9.58622 1.64062 10.5019C1.64287 11.4137 1.65376 12.3162 1.66418 13.0783C1.67747 14.051 1.69125 15.0568 1.9303 15.9936C2.17142 16.9386 2.63509 17.6961 3.30833 18.2452C4.03667 18.8391 4.92572 19.1719 5.95111 19.2342C7.39547 19.322 8.88277 19.363 10.4978 19.359C12.1171 19.3628 13.6037 19.322 15.0481 19.2342C16.0735 19.1719 16.9625 18.8391 17.6909 18.2452C18.1758 17.8496 18.5548 17.342 18.817 16.7364C18.9971 16.3208 19.48 16.1297 19.8958 16.3097C20.3115 16.4898 20.5025 16.9727 20.3226 17.3885C19.9549 18.2375 19.4183 18.9535 18.7276 19.5166C17.7417 20.3208 16.5038 20.7893 15.1477 20.8718C13.7313 20.958 12.2762 20.9999 10.7067 20.9999ZM15.5855 10.4999C15.5855 7.67291 13.2855 5.37299 10.4585 5.37299C7.63163 5.37299 5.33155 7.67291 5.33155 10.4999C5.33155 13.327 7.63163 15.6269 10.4585 15.6269C13.2855 15.6269 15.5855 13.327 15.5855 10.4999ZM13.9448 10.4999C13.9448 12.4222 12.381 13.9863 10.4585 13.9863C8.53622 13.9863 6.97218 12.4222 6.97218 10.4999C6.97218 8.57765 8.53622 7.01361 10.4585 7.01361C12.381 7.01361 13.9448 8.57765 13.9448 10.4999ZM16.1597 3.73236C15.4802 3.73236 14.9292 4.28319 14.9292 4.96283C14.9292 5.64247 15.4802 6.1933 16.1597 6.1933C16.8393 6.1933 17.3901 5.64247 17.3901 4.96283C17.3901 4.28319 16.8393 3.73236 16.1597 3.73236Z"/>
+                </g>
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 21 21">
+            <g clip-path="url(#clip0)">
+                <path d="M11.9178 20.959H8.54831C7.98549 20.959 7.52765 20.502 7.52765 19.9403V12.355H5.56179C4.99897 12.355 4.54114 11.8979 4.54114 11.3363V8.08601C4.54114 7.52429 4.99897 7.06735 5.56179 7.06735H7.52765V5.4397C7.52765 3.82583 8.03541 2.45277 8.99587 1.46919C9.96066 0.481133 11.309 -0.0410156 12.895 -0.0410156L15.4648 -0.03685C16.0266 -0.0358887 16.4837 0.421051 16.4837 0.981812V3.99966C16.4837 4.56139 16.026 5.01833 15.4633 5.01833L13.7331 5.01897C13.2055 5.01897 13.0711 5.12455 13.0424 5.15691C12.995 5.21059 12.9387 5.36231 12.9387 5.78128V7.06718H15.3333C15.5136 7.06718 15.6882 7.11157 15.8383 7.1952C16.1621 7.37576 16.3634 7.71719 16.3634 8.08617L16.3621 11.3365C16.3621 11.8979 15.9043 12.3548 15.3415 12.3548H12.9387V19.9403C12.9387 20.502 12.4807 20.959 11.9178 20.959ZM8.76117 19.7279H11.705V11.8038C11.705 11.4288 12.0108 11.1237 12.3864 11.1237H15.1286L15.1297 8.29846H12.3863C12.0106 8.29846 11.705 7.9934 11.705 7.61833V5.78128C11.705 5.30031 11.7539 4.75333 12.1177 4.34221C12.5572 3.84522 13.2499 3.78786 13.7328 3.78786L15.2501 3.78722V1.19394L12.894 1.19009C10.3451 1.19009 8.76117 2.81854 8.76117 5.4397V7.61833C8.76117 7.99324 8.45552 8.29846 8.07988 8.29846H5.77466V11.1237H8.07988C8.45552 11.1237 8.76117 11.4288 8.76117 11.8038V19.7279ZM15.4624 1.19426H15.4625H15.4624Z"/>
+                </g>
+        </symbol>
+        <symbol id="vk" viewBox="0 0 27 25">
+            <g clip-path="url(#clip0)">
+                <path d="M22.4044 13.5708C21.9679 13.0604 22.0928 12.8333 22.4044 12.3771C22.41 12.3719 26.0134 7.76147 26.3846 6.19793L26.3869 6.19689C26.5714 5.62709 26.3869 5.20834 25.4948 5.20834H22.5427C21.7913 5.20834 21.4447 5.56772 21.2591 5.9698C21.2591 5.9698 19.7561 9.30105 17.6299 11.4604C16.9436 12.0844 16.6264 12.2844 16.2518 12.2844C16.0672 12.2844 15.7804 12.0844 15.7804 11.5146V6.19689C15.7804 5.51355 15.57 5.20834 14.9479 5.20834H10.3061C9.83475 5.20834 9.55462 5.52709 9.55462 5.82397C9.55462 6.47189 10.6178 6.62084 10.728 8.44376V12.399C10.728 13.2656 10.5581 13.425 10.1813 13.425C9.17775 13.425 6.74213 10.0802 5.29875 6.25209C5.00738 5.50939 4.72275 5.20939 3.96563 5.20939H1.0125C0.169875 5.20939 0 5.56876 0 5.97084C0 6.68126 1.0035 10.2136 4.6665 14.8802C7.10775 18.0656 10.5458 19.7917 13.6733 19.7917C15.5531 19.7917 15.7826 19.4083 15.7826 18.749C15.7826 15.7052 15.6128 15.4177 16.5544 15.4177C16.9909 15.4177 17.7424 15.6177 19.4974 17.1542C21.5033 18.9761 21.8329 19.7917 22.9556 19.7917H25.9076C26.7491 19.7917 27.1755 19.4083 26.9303 18.6521C26.3689 17.0615 22.5754 13.7896 22.4044 13.5708Z"/>
+                </g>
+        </symbol>
+        <symbol id="tel" viewBox="0 0 12 12">
+            <g>
+                <path d="M8.62484 12C8.23748 12 7.85341 11.9315 7.47784 11.7951C5.82326 11.194 4.28747 10.2151 3.03642 8.96405C1.78538 7.71304 0.806437 6.17722 0.205407 4.52264C0.0122666 3.99091 -0.044731 3.44203 0.0360547 2.89118C0.111731 2.3752 0.311598 1.87429 0.61407 1.44259C0.917878 1.00899 1.32291 0.648348 1.78536 0.399663C2.27851 0.134479 2.81678 0 3.38525 0C3.56206 0 3.71486 0.123534 3.75192 0.296402L4.3405 3.04314C4.36715 3.16752 4.32893 3.29694 4.239 3.38688L3.23327 4.39259C4.18202 6.27891 5.72152 7.81841 7.60784 8.76716L8.61355 7.76143C8.7035 7.67151 8.83294 7.63333 8.95729 7.65993L11.704 8.24851C11.8769 8.28557 12.0004 8.43837 12.0004 8.61518C12.0004 9.18365 11.866 9.72194 11.6007 10.2151C11.3521 10.6775 10.9914 11.0826 10.5578 11.3864C10.1261 11.6889 9.62523 11.8887 9.10923 11.9644C8.94754 11.9881 8.78588 12 8.62484 12ZM3.08564 0.766375C2.33579 0.849153 1.67024 1.24218 1.22827 1.87298C0.731276 2.58228 0.615382 3.45471 0.910308 4.2666C2.06582 7.44755 4.55293 9.93466 7.73388 11.0902C8.54574 11.3851 9.41817 11.2692 10.1275 10.7722C10.7583 10.3302 11.1513 9.66469 11.2341 8.91484L8.99964 8.43603L7.94931 9.48636C7.83754 9.59813 7.66772 9.62782 7.52471 9.56061C5.29378 8.51253 3.48795 6.70669 2.43987 4.47577C2.37268 4.33274 2.40235 4.16292 2.51412 4.05117L3.56445 3.00084L3.08564 0.766375Z"/>
+                </g>
+        </symbol>
+        <symbol id="mail" viewBox="0 0 20 14">
+            <g>
+                <path d="M19.9861 1.94664C19.9853 1.38222 19.5259 0.92363 18.9616 0.92363C18.9612 0.92363 18.9607 0.92363 18.9603 0.92363L1.02305 0.948278C0.749414 0.94863 0.492266 1.05554 0.299024 1.24929C0.105821 1.44308 -0.000350692 1.70054 8.7029e-07 1.9741L0.013868 12.0533C0.0142196 12.327 0.121133 12.5841 0.314883 12.7773C0.508281 12.9702 0.765117 13.0764 1.03828 13.0764C1.03875 13.0764 1.03926 13.0764 1.03965 13.0764L18.9769 13.0517C19.5416 13.0509 20.0006 12.5908 19.9999 12.0259L19.9861 1.94664ZM17.8363 1.9496L10.0008 7.39662L2.15 1.97117L17.8363 1.9496ZM13.3143 8.42463L17.9616 12.0287L2.02519 12.0506L6.70081 8.42463C6.92432 8.25123 6.96503 7.92951 6.79167 7.70592C6.61827 7.4824 6.29655 7.4417 6.07296 7.61506L1.03754 11.5201L1.02504 2.43906L9.71033 8.44127C9.79799 8.50185 9.89975 8.53209 10.0015 8.53209C10.1038 8.53209 10.2061 8.5015 10.2939 8.44045L18.9623 2.41452L18.9755 11.5186L13.942 7.6151C13.7186 7.44178 13.3968 7.48244 13.2234 7.70596C13.05 7.92947 13.0907 8.25127 13.3143 8.42463Z"/>
+                </g>
+        </symbol>
+        <symbol id="plus" viewBox="0 0 16 17">
+            <g>
+                <path d="M15.3246 8.31245C15.3246 9.11598 14.7243 9.76717 13.9832 9.76717H9.00313V15.1698C9.00313 15.9735 8.40264 16.6247 7.66202 16.6245C7.29165 16.6245 6.9564 16.4619 6.71395 16.1988C6.47119 15.9352 6.32112 15.5718 6.32128 15.1702L6.32108 9.76696H1.34041C0.970265 9.76696 0.635288 9.60438 0.39233 9.34082C0.149972 9.07791 5.0054e-08 8.71424 5.0054e-08 8.31245C-0.000200135 7.50907 0.600089 6.85774 1.34111 6.85774H6.32128V1.45505C6.32128 0.651408 6.92191 0 7.66259 0C8.40301 0.00021716 9.0031 0.650974 9.0035 1.4545V6.85774H13.9842C14.7247 6.85817 15.3242 7.50907 15.3246 8.31245Z"/>
+            </g>
+        </symbol>
+        <symbol id="star" viewBox="0 0 10 11">
+            <g>
+                <path d="M9.78298 5.09218C9.97981 4.90035 10.0493 4.61881 9.96439 4.35709C9.87929 4.09538 9.65763 3.90856 9.3853 3.86891L6.96399 3.51709C6.86087 3.50207 6.77176 3.43739 6.72571 3.34388L5.64321 1.15005C5.52166 0.90355 5.27497 0.750366 5.00004 0.750366C4.72531 0.750366 4.47861 0.90355 4.35706 1.15005L3.27437 3.34408C3.22831 3.43759 3.139 3.50227 3.03588 3.51729L0.614574 3.86911C0.342448 3.90856 0.120581 4.09558 0.0354791 4.35729C-0.0494227 4.61901 0.0200606 4.90055 0.216897 5.09238L1.9688 6.80003C2.04349 6.87291 2.07773 6.97784 2.06011 7.08036L1.64681 9.49166C1.61017 9.70391 1.66584 9.91036 1.8032 10.0732C2.01666 10.3269 2.3893 10.4042 2.68726 10.2476L4.85266 9.109C4.94317 9.06154 5.0571 9.06194 5.14741 9.109L7.31301 10.2476C7.41834 10.303 7.53067 10.3311 7.64661 10.3311C7.85827 10.3311 8.05891 10.237 8.19687 10.0732C8.33444 9.91036 8.3899 9.70351 8.35326 9.49166L7.93976 7.08036C7.92214 6.97764 7.95638 6.87291 8.03107 6.80003L9.78298 5.09218Z"/>
+            </g>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 12 13">
+            <g>
+                <path d="M11.507 3.044H2.12443L1.98496 1.49028C1.96215 1.23619 1.74921 1.0415 1.49411 1.0415H0.49282C0.220643 1.0415 0 1.26215 0 1.53432C0 1.8065 0.220643 2.02714 0.49282 2.02714H1.04356C1.34453 5.38024 0.566673 -3.28628 1.61037 8.34202C1.65059 8.79715 1.89651 9.29103 2.32015 9.62661C1.55635 10.602 2.25423 12.04 3.49667 12.04C4.52789 12.04 5.25522 11.0115 4.90159 10.0374H7.59886C7.24567 11.0103 7.97143 12.04 9.00377 12.04C9.82763 12.04 10.4979 11.3697 10.4979 10.5459C10.4979 9.72203 9.82763 9.05177 9.00377 9.05177H3.50001C3.12565 9.05177 2.79943 8.82592 2.65862 8.49686L10.5345 8.03398C10.7496 8.02136 10.9315 7.87051 10.9837 7.66155L11.9851 3.65634C12.0627 3.34577 11.8276 3.044 11.507 3.044ZM3.49667 11.0544C3.21633 11.0544 2.98823 10.8263 2.98823 10.5459C2.98823 10.2655 3.21633 10.0374 3.49667 10.0374C3.77704 10.0374 4.00515 10.2655 4.00515 10.5459C4.00515 10.8263 3.77704 11.0544 3.49667 11.0544ZM9.00375 11.0544C8.72338 11.0544 8.49528 10.8263 8.49528 10.5459C8.49528 10.2655 8.72338 10.0374 9.00375 10.0374C9.28412 10.0374 9.51222 10.2655 9.51222 10.5459C9.51222 10.8263 9.28412 11.0544 9.00375 11.0544ZM10.1153 7.07129L2.52596 7.5173L2.2129 4.02961H10.8758L10.1153 7.07129Z"/>
+            </g>
+        </symbol>
+    </svg>
+    <!-- /Sprites -->
+
+    <!-- Header -->
+    <header class="section-header">
+
+        <!-- Header-top -->
+        <div class="section-header-top">
+            <div class="section-inner">
+
+                <div class="section-header-top-info">
+                    <a href="#" class="section-header-top-info-item">
+                        О компании 
+                    </a>
+                    <a href="#" class="section-header-top-info-item">
+                        Услуги
+                    </a>
+                    <a href="#" class="section-header-top-info-item">
+                        Наши работы
+                    </a>
+                    <a href="#" class="section-header-top-info-item">
+                        Отзывы
+                    </a>
+                    <a href="#" class="section-header-top-info-item">
+                        Доставка и оплата
+                    </a>
+                    <a href="#" class="section-header-top-info-item">
+                        Контакты
+                    </a>
+                </div>
+
+                <div class="section-header-top-media-and-button">
+                    <div class="section-header-top-media">
+                        <a href="#" class="section-header-top-media__link">
+                            <svg class="inst">
+                                <use xlink:href="#inst"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-header-top-media__link">
+                            <svg class="youtube">
+                                <use xlink:href="#youtube"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-header-top-media__link">
+                            <svg class="facebook">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-header-top-media__link">
+                            <svg class="vk">
+                                <use xlink:href="#vk"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="#" class="order-button">
+                        В корзину звонок
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- /Header-top -->
+
+        <!-- Header-info -->
+        <div class="section-header-info">
+            <div class="section-inner">
+
+                <a href="index.html" class="section-header-info-img">
+                    <img src="img/header/camera.jpg" alt="Camera">
+                </a>
+
+                <div class="section-header-info-consultations">
+                    <span class="section-header-info-consultations__text">
+                        Бесплатная консультация
+                    </span>
+                    <a href="#" class="section-header-info-consultations__tel">
+                        <svg class="tel">
+                            <use xlink:href="#tel"></use>
+                        </svg>
+                        <span>+7 (918) 18-18-167</span>
+                    </a>
+                    <a href="#" class="section-header-info-consultations__tel">
+                        <svg class="tel">
+                            <use xlink:href="#tel"></use>
+                        </svg>
+                        <span>8 800 333 01 01</span>
+                    </a>
+                </div>
+
+                <div class="section-header-info-search">
+                    <input type="search" placeholder="Поиск">
+                </div>
+
+                <div class="section-header-info-price">
+                    <span>
+                        Скачать прайс
+                    </span>
+                </div>
+
+                <a href="#" class="section-header-info-mail">
+                    <svg class="mail">
+                        <use xlink:href="#mail"></use>
+                    </svg>
+                    <span>info@mail.ru</span>
+                </a>
+
+                <div class="section-header-info-schedule">
+                    <span class="section-header-info-schedule__time">
+                        График работы: <br>
+                        пн.-пт.: с 9:00 до 18:00
+                    </span>
+                    <a href="#" class="section-header-info-schedule__driveway">
+                        <span>
+                            Схема проезда
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- /Header-info -->
+
+        <!-- Header-nav -->
+        <nav class="section-header-nav">
+            <div class="section-inner">
+                <a href="#" class="section-header-nav__item active">
+                    <span>Видеонаблюдение</span>
+                </a>
+                <a href="#" class="section-header-nav__item">
+                    СКУД
+                </a>
+                <a href="#" class="section-header-nav__item">
+                    Пожарная сигнализация
+                </a>
+                <a href="#" class="section-header-nav__item">
+                    Охранная сигнализация
+                </a>
+                <a href="#" class="section-header-nav__item">
+                    Блоки питания
+                </a>
+                <a href="#" class="section-header-nav__item">
+                    <span>Кабельная продукция</span>
+                </a>
+            </div>
+        </nav>
+        <!-- /Header-nav -->
+        
+    </header>
+    <!-- /Header -->
+
+    <section class="section-page">
+        <div class="section-inner">
+            <div class="section-page-title">
+                Видеонаблюдение
+            </div>
+            <div class="section-page-breadcrumbs">
+                <span class="section-page-breadcrumbs-item">Главная</span>
+                <span class="section-page-breadcrumbs-item">Каталог</span>
+                <span class="section-page-breadcrumbs-item">Видеонаблюдение</span>
+            </div>
+            <div class="section-page-main">
+                <section class="section-filter">
+                    <section class="section-filter-category">
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/camera.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                Видеонаблюдение
+                            </span>
+                        </div>
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/skyd.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                СКУД
+                            </span>
+                        </div>
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/signaling.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                Пожарная сигнализация
+                            </span>
+                        </div>
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/security-alarm.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                Охранная сигнализация
+                            </span>
+                        </div>
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/power-supply.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                Блоки питания
+                            </span>
+                        </div>
+                        <div class="section-filter-category-item">
+                            <div class="section-filter-category-item__img">
+                                <img src="img/filter/category/cable.png" alt="">
+                            </div>
+                            <span class="section-filter-category-item__title">
+                                Кабельная продукция
+                            </span>
+                        </div>
+                    </section>
+                    <section class="section-filter-brands">
+                        <div class="section-filter-brands-wrapper">
+                            <div class="section-filter-brands-item">
+                                <span class="section-filter-brands-item__text">
+                                    Бренд
+                                </span>
+                            </div>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Ajax (27)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Grow (6)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text">DSC (16)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Elmes Electronic (50)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">ECVI (13)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Ajax (27)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Grow (6)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">DSC (16)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">Elmes Electronic (50)</span>
+                            </label>
+                            <label class="section-filter-brands-item">
+                                <input type="checkbox"></input>
+                                <span class="section-filter-brands-item__input-text"">ECVI (13)</span>
+                            </label>
+                        </div>
+                        <div class="section-filter-brands-buttons">
+                            <button class="section-filter-button">
+                                Показать
+                            </button>
+                            <button class="section-filter-button">
+                                Сбросить
+                            </button>
+                        </div>
+                    </section>
+                    <section class="section-filter-mailing">
+                        <div class="section-filter-mailing-text">
+                            <p>Будьте всегда в курсе!</p>
+                            <p>Узнавайте о скидках и акциях первым</p>
+                        </div>
+                        <div class="section-filter-mailing-form">
+                            <input class="section-filter-mailing-form__input" type="mail" placeholder="e-mail">
+                            <button class="section-filter-button">
+                                Отправить
+                            </button>
+                        </div>
+                    </section>
+                    <section class="section-filter-articles">
+                        <div class="headline">
+                            <div class="title">Статьи</div>
+                            <a href="#" class="title-all">
+                                <div class="title-all__plus">
+                                    <svg class="plus">
+                                        <use xlink:href="#plus"></use>
+                                    </svg>
+                                </div>
+                                <div class="title-all__text">
+                                    Все статьи
+                                </div>
+                            </a>
+                        </div>
+                        <div class="section-filter-articles-items">
+                            <div class="full-item">
+                                <div class="full-item__img">
+                                    <img src="img/filter/articles/item1.jpg" alt="">
+                                </div>
+                                <div class="full-item__title">
+                                    Название статьи
+                                </div>
+                                <div class="full-item__text">
+                                    Служба Яндекс.Рефераты предназначена для студентов и школьников, дизайнеров и журналистов, создателей научных заявок и отчетов — для всех, кто относится к тексту, как к количеству знаков.
+                                </div>
+                                <a href="#" class="item__more">
+                                    Подробнее...
+                                </a>
+                            </div>
+                            <div class="section-filter-articles-item-outer">
+                                <div class="title">Подключение камеры видеонаблюдения</div>
+                                <div class="section-filter-articles-item">
+                                    <div class="section-filter-articles-item__background">
+                                        <img src="img/filter/articles/item2.jpg" alt="">
+                                    </div>
+                                    <div class="section-filter-articles-item__title">
+                                        Подключение камеры видеонаблюдения
+                                    </div>
+                                    <a href="#" class="item__more">
+                                        Подробнее...
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="section-filter-articles-item-outer">
+                                <div class="title">Компоненты СКУД</div>
+                                <div class="section-filter-articles-item">
+                                    <div class="section-filter-articles-item__background">
+                                        <img src="img/filter/articles/item2.jpg" alt="">
+                                    </div>
+                                    <div class="section-filter-articles-item__title">
+                                        Компоненты СКУД
+                                    </div>
+                                    <a href="#" class="item__more">
+                                        Подробнее...
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-filter-news">
+                        <div class="headline">
+                            <div class="title">Новости</div>
+                            <a href="#" class="title-all">
+                                <div class="title-all__plus">
+                                    <svg class="plus">
+                                        <use xlink:href="#plus"></use>
+                                    </svg>
+                                </div>
+                                <div class="title-all__text">
+                                    Все новости
+                                </div>
+                            </a>
+                        </div>
+                        <div class="section-filter-news-item">
+                            <div class="full-item">
+                                <div class="full-item__img">
+                                    <img src="img/filter/news/item1.jpg" alt="">
+                                </div>
+                                <div class="full-item__title">
+                                    Название статьи
+                                </div>
+                                <div class="full-item__text">
+                                    Служба Яндекс.Рефераты предназначена для студентов и школьников, дизайнеров и журналистов, создателей научных заявок и отчетов — для всех, кто относится к тексту, как к количеству знаков.
+                                </div>
+                                <a href="#" class="item__more">
+                                    Подробнее...
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="section-content">
+                    <div class="section-product">
+                        <div class="section-product-item">
+                            <div class="section-product-item__img">
+                                <img src="img/product/camera.png" alt="">
+                                <span class="section-product-item__img-discount">
+                                    Акция
+                                </span>
+                            </div>
+                            <div class="section-product-item__text">
+                                Производитель: Tantos
+                            </div>
+                            <div class="section-product-item__text">
+                                Модель: TSc-E1080pUVCv (2.8-12)
+                            </div>
+                        </div>
+                        <div class="section-product-description">
+                            <div class="section-product-description-rating">
+                                <div class="card-rating">
+                                    <svg class="star active">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="star active">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="star active">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="star">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="star">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="section-product-description-rating-article">
+                                    <span>Артикул</span> <span>3435245</span>
+                                </div>
+                            </div>
+                            <div class="section-product-description-text">
+                                <div class="section-product-description-name">
+                                    Tsc-E1080pUVCv (2.8-12) уличная аналоговая камера видеонаблюдения
+                                </div>
+                                <div class="section-product-description-payment">
+                                    <span class="section-product-description-payment__text bold">Способы оплаты</span>
+                                    <span class="section-product-description-payment__text bold left">Гарантия 2 года</span>
+                                    <span class="section-product-description-payment__text">Наличный расчет</span>
+                                    <span class="section-product-description-payment__text">Бесналичный расчет</span>
+                                    <span class="section-product-description-payment__text">Банковской картой</span>
+                                </div>
+                                <div class="section-product-description-price bold">
+                                    6150 руб.
+                                </div>
+                                <div class="section-product-description-order">
+                                    <div class="section-product-description-order-item">
+                                        <span>в наличии</span>
+                                        <a href="#">Нашли дешевле?</a>
+                                    </div>
+                                    <div class="section-product-description-order-item">
+                                        <span>под заказ 1-2 дня</span>
+                                    </div>
+                                </div>
+                                <div class="section-product-description-yandex">
+                                    <svg class="star active">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <img src="img/product/yandex.svg" alt="">
+                                </div>
+                                <div class="section-product-description-count">
+                                    <div class="num-block">
+                                        <div class="num-in">
+                                            <span class="num-minus dis">-</span>
+                                            <input type="text" class="in-num" value="1">
+                                            <span class="num-plus">+</span>
+                                        </div>
+                                    </div>
+                                    <button class="section-product-order">
+                                        <svg class="cart">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                        <span>Заказать</span>
+                                    </button>
+                                </div>
+                                <div class="section-product-description-note">
+                                    <p>
+                                        Цена действительна только для интернет-магазина и может отличаться от цен в розничных магазинах
+                                    </p>
+                                    <p>
+                                        Интернет-магазин "Техноком Групп" осуществляет доставку данного товара в любой регион России. Для Москвы и области возможен самовывоз из офиса компании.
+                                    </p>
+                                    <p>
+                                        Наша компания более 10 лет на рынке, имеем огромный опыт. Проконсультируем по любым вопросам, подберем аналог, комплектуем системы под ключ.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product-img">
+                        <img src="img/product/img/item.jpg" alt="">
+                    </div>
+                    <div class="section-product-tabs">
+                        <div class="section-product-tabs-names">
+                            <a href="#tab-1" class="section-product-tabs-name">Описание</a>
+                            <a href="#tab-2" class="section-product-tabs-name">Характеристики</a>
+                            <a href="#tab-3" class="section-product-tabs-name">Отзывы</a>
+                            <a href="#tab-4" class="section-product-tabs-name">Задать вопрос</a>
+                            <a href="#tab-5" class="section-product-tabs-name">Дополнительно</a>
+                            <a href="#tab-6" class="section-product-tabs-name">Документы</a>
+                            <a href="#tab-7" class="section-product-tabs-name">Способы оплаты</a>
+                            <a href="#tab-8" class="section-product-tabs-name">Доставка</a>
+                            <a href="#tab-9" class="section-product-tabs-name">Инструкции</a>
+                            <a href="#tab-10" class="section-product-tabs-name">Запросить оферту</a>
+                        </div>
+                        <div class="section-product-tabs-texts">
+                            <div class="section-product-tabs-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-footer">
+        <div class="section-inner">
+            <div class="section-footer-column">
+                <div class="section-footer-title">
+                    Компания
+                </div>
+                <div class="section-footer-links">
+                    <a href="#" class="section-footer-link">
+                        Компания
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        О компании
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Наши проекты
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Новости
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Вакансии
+                    </a>
+                </div>
+            </div>
+            <div class="section-footer-column">
+                <div class="section-footer-title">
+                    Информация
+                </div>
+                <div class="section-footer-links">
+                    <a href="#" class="section-footer-link">
+                        Блог
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Вопрос-ответ
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Бренды
+                    </a>
+                    <a href="#" class="section-footer-link section-footer-link--bold">
+                        Способы оплаты
+                    </a>
+                </div>
+            </div>
+            <div class="section-footer-column">
+                <div class="section-footer-title">
+                    Помощь
+                </div>
+                <div class="section-footer-links">
+                    <a href="#" class="section-footer-link">
+                        Условия оплаты
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Условия доставки
+                    </a>
+                    <a href="#" class="section-footer-link">
+                        Гарантия на товар
+                    </a>
+                    <a href="#" class="section-footer-link section-footer-link--bold">
+                        Яндекс маркет
+                    </a>
+                </div>
+            </div>
+            <div class="section-footer-column">
+                <div class="section-footer-title">
+                    Контакты
+                </div>
+                <div class="section-footer-links">
+                    <a href="#" class="section-footer-link">
+                        <svg class="tel">
+                            <use xlink:href="#tel"></use>
+                        </svg>
+                        <span>
+                            8 (918) 18-18-167
+                        </span>
+                    </a>
+                    <div class="section-footer-link section-footer-link--no-hover">
+                        Адрес : г.Краснодар, ул.Зиповская
+                    </div>
+                    <div class="section-footer-link section-footer-link--no-hover">
+                        График: пн.-пт. с 9:00 до 18:00
+                    </div>
+                    <a href="#" class="section-footer-link">
+                        <svg class="mail">
+                            <use xlink:href="#mail"></use>
+                        </svg>
+                        <span>
+                            info@maul.ru
+                        </span>
+                    </a>
+                    <div class="section-footer-media">
+                        <a href="#" class="section-footer-media-item">
+                            <svg class="inst">
+                                <use xlink:href="#inst"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-footer-media-item">
+                            <svg class="youtube">
+                                <use xlink:href="#youtube"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-footer-media-item">
+                            <svg class="facebook">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="section-footer-media-item">
+                            <svg class="vk">
+                                <use xlink:href="#vk"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <script src="js/product.js"></script>
+
+</body>
+</html>
