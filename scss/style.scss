@@ -1241,6 +1241,7 @@ img {
 .section-filter {
     max-width: 310px;
     margin-right: 20px;
+    padding-bottom: 50px;
 
     &-category {
         padding: 4px 0px;
@@ -1643,6 +1644,9 @@ img {
 }
 
 .section-product {
+    padding: 28px 6px 28px 16px;
+    border: 0.5px solid #E4E4E4;
+    border-radius: 5px;
     display: flex;
 
     &-item {
@@ -1686,6 +1690,8 @@ img {
             align-items: center;
 
             &-article {
+                margin-right: 46px;
+
                 span {
                     font-size: 12px;
                     font-weight: 500;
@@ -1800,7 +1806,7 @@ img {
     &-img {
         width: 100%;
         height: auto;
-        margin-top: 30px;
+        margin-top: 8px;
 
         img {
             width: 100%;
@@ -1868,6 +1874,86 @@ img {
             width: 16px;
             height: 16px;
             fill: $color-blue--lighter;
+        }
+    }
+
+    &-tabs {
+        margin-top: 14px;
+        &-names {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &-name {
+            position: relative;
+            padding: 4px 10.6px;
+            border-radius: 0px 10px 0px 0px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: $color-white;
+            background: $color-blue;
+        }
+
+        &-name--active,
+        &-name:hover {
+            color: $color-blue;
+            background: $color-white;
+            
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - 2px);
+                height: 19px;
+                border: 0.5px solid #056DD0;
+                border-radius: 0px 10px 0px 0px;
+            }
+        }
+
+        &-text {
+            display: none;
+
+            &--active {
+                display: block;
+            }
+
+            table {
+                border-spacing: 0;
+                tr {
+                    display: flex;
+                }
+                td {
+                    padding: 18px 7px;
+                    border: 0.5px solid #E4E4E4;
+
+                    &:first-child {
+                        max-width: 395px;
+                        width: 100%;
+                        border-right: none;
+                    }
+
+                    &:last-child {
+                        max-width: 575px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &-more {
+        margin-top: 20px;
+
+        &:last-child {
+            margin-bottom: 24px;
+        }
+
+        &-items {
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 }
